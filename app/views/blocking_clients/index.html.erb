@@ -1,0 +1,29 @@
+<h1>Listing blocking_clients</h1>
+
+<table>
+  <tr>
+    <th>Blocking client</th>
+    <th>Car number</th>
+    <th>Lat</th>
+    <th>Long</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blocking_clients.each do |blocking_client| %>
+  <tr>
+    <td><%= blocking_client.blocking_client_id %></td>
+    <td><%= blocking_client.car_number %></td>
+    <td><%= blocking_client.lat %></td>
+    <td><%= blocking_client.long %></td>
+    <td><%= link_to 'Show', blocking_client %></td>
+    <td><%= link_to 'Edit', edit_blocking_client_path(blocking_client) %></td>
+    <td><%= link_to 'Destroy', blocking_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blocking client', new_blocking_client_path %>

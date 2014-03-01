@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  message_id: 1
+  blocking_client_id: 1
+  message_text: MyText
+  unread: false
+
+two:
+  message_id: 1
+  blocking_client_id: 1
+  message_text: MyText
+  unread: false

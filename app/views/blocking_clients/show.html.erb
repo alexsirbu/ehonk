@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Blocking client:</b>
+  <%= @blocking_client.blocking_client_id %>
+</p>
+
+<p>
+  <b>Car number:</b>
+  <%= @blocking_client.car_number %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @blocking_client.lat %>
+</p>
+
+<p>
+  <b>Long:</b>
+  <%= @blocking_client.long %>
+</p>
+
+
+<%= link_to 'Edit', edit_blocking_client_path(@blocking_client) %> |
+<%= link_to 'Back', blocking_clients_path %>

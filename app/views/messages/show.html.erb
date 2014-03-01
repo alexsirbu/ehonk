@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Message:</b>
+  <%= @message.message_id %>
+</p>
+
+<p>
+  <b>Blocking client:</b>
+  <%= @message.blocking_client_id %>
+</p>
+
+<p>
+  <b>Message text:</b>
+  <%= @message.message_text %>
+</p>
+
+<p>
+  <b>Unread:</b>
+  <%= @message.unread %>
+</p>
+
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

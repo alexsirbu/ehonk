@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  blocking_client_id: 1
+  car_number: MyString
+  lat: 1.5
+  long: 1.5
+
+two:
+  blocking_client_id: 1
+  car_number: MyString
+  lat: 1.5
+  long: 1.5
