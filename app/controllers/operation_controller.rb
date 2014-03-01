@@ -33,7 +33,7 @@ class OperationController < ApplicationController
 				msg_text = ""
 				@messages.each do |msg|
 					if msg.unread
-						msg_text+=msg.message_text+"\n"
+						msg_text+=msg.message_text+" -> posted at "+msg.created_at.to_s+"\n"
 						nr_msg=nr_msg+1
 						msg.unread = false
 						msg.save
