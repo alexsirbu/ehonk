@@ -3156,3 +3156,465 @@ Processing by OperationController#unregister as JSON
   Parameters: {"blocking_client_id"=>"9"}
   [1m[35mBlockingClient Load (0.2ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1  [["blocking_client_id", "9"]]
 Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2014-03-01 20:33:40 +0200
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.css?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /blocking_clients.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.css?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /operation.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.js?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /blocking_clients.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.js?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /operation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-01 20:33:41 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/get_messages.json?blocking_client_id=10" for 127.0.0.1 at 2014-03-01 20:33:47 +0200
+Processing by OperationController#get_messages as JSON
+  Parameters: {"blocking_client_id"=>"10"}
+  [1m[35mBlockingClient Load (0.2ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1  [["blocking_client_id", "10"]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."blocking_client_id" = 10[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search.json?car_number=B13ABC&lat=46.3625%20&long=15.114444" for 141.85.223.25 at 2014-03-01 20:33:50 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625 ", "long"=>"15.114444"}
+  [1m[35mBlockingClient Load (0.3ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "messages" ("blocking_client_id", "created_at", "message_text", "unread", "updated_at") VALUES (?, ?, ?, ?, ?)  [["blocking_client_id", 10], ["created_at", Sat, 01 Mar 2014 18:33:50 UTC +00:00], ["message_text", "You are blocking someone!"], ["unread", true], ["updated_at", Sat, 01 Mar 2014 18:33:50 UTC +00:00]]
+  [1m[36m (437.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 443ms (Views: 0.1ms | ActiveRecord: 438.6ms)
+
+
+Started GET "/search.json?car_number=B13ABC&lat=46.3625%20&long=15.114444" for 141.85.223.25 at 2014-03-01 20:33:52 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625 ", "long"=>"15.114444"}
+  [1m[35mBlockingClient Load (0.3ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("blocking_client_id", "created_at", "message_text", "unread", "updated_at") VALUES (?, ?, ?, ?, ?)  [["blocking_client_id", 10], ["created_at", Sat, 01 Mar 2014 18:33:52 UTC +00:00], ["message_text", "You are blocking someone!"], ["unread", true], ["updated_at", Sat, 01 Mar 2014 18:33:52 UTC +00:00]]
+  [1m[36m (324.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 329ms (Views: 0.1ms | ActiveRecord: 325.6ms)
+
+
+Started GET "/search.json?car_number=B13ABC&lat=46.3625%20&long=15.114444" for 141.85.223.25 at 2014-03-01 20:33:52 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625 ", "long"=>"15.114444"}
+  [1m[35mBlockingClient Load (0.3ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("blocking_client_id", "created_at", "message_text", "unread", "updated_at") VALUES (?, ?, ?, ?, ?)  [["blocking_client_id", 10], ["created_at", Sat, 01 Mar 2014 18:33:52 UTC +00:00], ["message_text", "You are blocking someone!"], ["unread", true], ["updated_at", Sat, 01 Mar 2014 18:33:52 UTC +00:00]]
+  [1m[36m (453.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 458ms (Views: 0.1ms | ActiveRecord: 454.5ms)
+
+
+Started GET "/search.json?car_number=B13ABC&lat=46.3625%20&long=15.114444" for 141.85.223.25 at 2014-03-01 20:33:53 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625 ", "long"=>"15.114444"}
+  [1m[35mBlockingClient Load (0.3ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("blocking_client_id", "created_at", "message_text", "unread", "updated_at") VALUES (?, ?, ?, ?, ?)  [["blocking_client_id", 10], ["created_at", Sat, 01 Mar 2014 18:33:53 UTC +00:00], ["message_text", "You are blocking someone!"], ["unread", true], ["updated_at", Sat, 01 Mar 2014 18:33:53 UTC +00:00]]
+  [1m[36m (462.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 467ms (Views: 0.1ms | ActiveRecord: 463.1ms)
+
+
+Started GET "/search.json?car_number=B13ABC&lat=46.3625%20&long=15.114444" for 141.85.223.25 at 2014-03-01 20:33:54 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625 ", "long"=>"15.114444"}
+  [1m[35mBlockingClient Load (0.3ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" 
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("blocking_client_id", "created_at", "message_text", "unread", "updated_at") VALUES (?, ?, ?, ?, ?)  [["blocking_client_id", 10], ["created_at", Sat, 01 Mar 2014 18:33:54 UTC +00:00], ["message_text", "You are blocking someone!"], ["unread", true], ["updated_at", Sat, 01 Mar 2014 18:33:54 UTC +00:00]]
+  [1m[36m (394.6ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 399ms (Views: 0.1ms | ActiveRecord: 395.3ms)
+
+
+Started GET "/get_messages.json?blocking_client_id=10" for 127.0.0.1 at 2014-03-01 20:33:56 +0200
+Processing by OperationController#get_messages as JSON
+  Parameters: {"blocking_client_id"=>"10"}
+  [1m[35mBlockingClient Load (0.2ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1  [["blocking_client_id", "10"]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."blocking_client_id" = 10[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "messages" SET "unread" = 'f', "updated_at" = '2014-03-01 18:33:56.047032' WHERE "messages"."message_id" = 14[0m
+  [1m[35m (315.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "messages" SET "unread" = 'f', "updated_at" = '2014-03-01 18:33:56.365026' WHERE "messages"."message_id" = 15
+  [1m[36m (175.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "messages" SET "unread" = 'f', "updated_at" = '2014-03-01 18:33:56.542861' WHERE "messages"."message_id" = 16[0m
+  [1m[35m (175.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "messages" SET "unread" = 'f', "updated_at" = '2014-03-01 18:33:56.720823' WHERE "messages"."message_id" = 17
+  [1m[36m (174.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "messages" SET "unread" = 'f', "updated_at" = '2014-03-01 18:33:56.898270' WHERE "messages"."message_id" = 18[0m
+  [1m[35m (253.2ms)[0m  commit transaction
+Completed 200 OK in 1110ms (Views: 0.1ms | ActiveRecord: 1096.2ms)
+
+
+Started GET "/unregister.json?blocking_client_id=9" for 127.0.0.1 at 2014-03-01 20:34:09 +0200
+Processing by OperationController#unregister as JSON
+  Parameters: {"blocking_client_id"=>"9"}
+  [1m[36mBlockingClient Load (0.1ms)[0m  [1mSELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1[0m  [["blocking_client_id", "9"]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/unregister.json?blocking_client_id=10" for 127.0.0.1 at 2014-03-01 20:34:13 +0200
+Processing by OperationController#unregister as JSON
+  Parameters: {"blocking_client_id"=>"10"}
+  [1m[35mBlockingClient Load (0.2ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1  [["blocking_client_id", "10"]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."blocking_client_id" = 10[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."message_id" = ?[0m  [["message_id", 13]]
+  [1m[35m (372.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "messages" WHERE "messages"."message_id" = ?  [["message_id", 14]]
+  [1m[36m (219.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."message_id" = ?[0m  [["message_id", 15]]
+  [1m[35m (210.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "messages" WHERE "messages"."message_id" = ?  [["message_id", 16]]
+  [1m[36m (243.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "messages" WHERE "messages"."message_id" = ?[0m  [["message_id", 17]]
+  [1m[35m (209.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "messages" WHERE "messages"."message_id" = ?  [["message_id", 18]]
+  [1m[36m (209.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ?[0m  [["blocking_client_id", 10]]
+  [1m[35m (208.5ms)[0m  commit transaction
+Completed 200 OK in 1689ms (Views: 0.2ms | ActiveRecord: 1675.9ms)
+
+
+Started GET "/register.json?car_number=B13ABC&lat=46.3625&long=15.114444" for 127.0.0.1 at 2014-03-01 20:34:17 +0200
+Processing by OperationController#register as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625", "long"=>"15.114444"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "blocking_clients" ("car_number", "created_at", "lat", "long", "updated_at") VALUES (?, ?, ?, ?, ?)  [["car_number", "B13ABC"], ["created_at", Sat, 01 Mar 2014 18:34:17 UTC +00:00], ["lat", 46.3625], ["long", 15.114444], ["updated_at", Sat, 01 Mar 2014 18:34:17 UTC +00:00]]
+  [1m[36m (256.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 260ms (Views: 0.1ms | ActiveRecord: 257.5ms)
+
+
+Started GET "/blocking_clients" for 127.0.0.1 at 2014-03-01 20:54:57 +0200
+Processing by BlockingClientsController#index as HTML
+  [1m[35mBlockingClient Load (0.3ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" 
+  Rendered blocking_clients/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.css?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /blocking_clients.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.css?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /operation.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.js?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /blocking_clients.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.js?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /operation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-01 20:54:59 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2014-03-01 20:55:05 +0200
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" [0m
+  Rendered messages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.css?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /operation.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.css?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /blocking_clients.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.js?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /blocking_clients.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.js?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /operation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-01 20:55:06 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/get_messages.json?blocking_client_id=10" for 127.0.0.1 at 2014-03-01 20:55:08 +0200
+Processing by OperationController#get_messages as JSON
+  Parameters: {"blocking_client_id"=>"10"}
+  [1m[35mBlockingClient Load (0.1ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1  [["blocking_client_id", "10"]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/get_messages.json?blocking_client_id=11" for 127.0.0.1 at 2014-03-01 20:55:11 +0200
+Processing by OperationController#get_messages as JSON
+  Parameters: {"blocking_client_id"=>"11"}
+  [1m[36mBlockingClient Load (0.1ms)[0m  [1mSELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1[0m  [["blocking_client_id", "11"]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."blocking_client_id" = 11
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/search.json?car_number=B13ABC&lat=46.3625%20&long=15.114444" for 141.85.223.25 at 2014-03-01 20:55:14 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625 ", "long"=>"15.114444"}
+  [1m[36mBlockingClient Load (0.3ms)[0m  [1mSELECT "blocking_clients".* FROM "blocking_clients" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("blocking_client_id", "created_at", "message_text", "unread", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["blocking_client_id", 11], ["created_at", Sat, 01 Mar 2014 18:55:14 UTC +00:00], ["message_text", "You are blocking someone!"], ["unread", true], ["updated_at", Sat, 01 Mar 2014 18:55:14 UTC +00:00]]
+  [1m[35m (457.7ms)[0m  commit transaction
+Completed 200 OK in 463ms (Views: 0.1ms | ActiveRecord: 458.6ms)
+
+
+Started GET "/search.json?car_number=B13ABC&lat=46.3625%20&long=15.114444" for 141.85.223.25 at 2014-03-01 20:55:15 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"B13ABC", "lat"=>"46.3625 ", "long"=>"15.114444"}
+  [1m[36mBlockingClient Load (0.1ms)[0m  [1mSELECT "blocking_clients".* FROM "blocking_clients" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("blocking_client_id", "created_at", "message_text", "unread", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["blocking_client_id", 11], ["created_at", Sat, 01 Mar 2014 18:55:15 UTC +00:00], ["message_text", "You are blocking someone!"], ["unread", true], ["updated_at", Sat, 01 Mar 2014 18:55:15 UTC +00:00]]
+  [1m[35m (562.6ms)[0m  commit transaction
+Completed 200 OK in 566ms (Views: 0.2ms | ActiveRecord: 563.1ms)
+
+
+Started GET "/get_messages.json?blocking_client_id=11" for 127.0.0.1 at 2014-03-01 20:55:17 +0200
+Processing by OperationController#get_messages as JSON
+  Parameters: {"blocking_client_id"=>"11"}
+  [1m[36mBlockingClient Load (0.2ms)[0m  [1mSELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1[0m  [["blocking_client_id", "11"]]
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."blocking_client_id" = 11
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "messages" SET "unread" = 'f', "updated_at" = '2014-03-01 18:55:17.313653' WHERE "messages"."message_id" = 19
+  [1m[36m (327.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "messages" SET "unread" = 'f', "updated_at" = '2014-03-01 18:55:17.644110' WHERE "messages"."message_id" = 20[0m
+  [1m[35m (191.7ms)[0m  commit transaction
+Completed 200 OK in 528ms (Views: 0.1ms | ActiveRecord: 520.7ms)
+
+
+Started GET "/search.json" for 141.85.223.230 at 2014-03-01 20:55:18 +0200
+Processing by OperationController#search as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search.json" for 141.85.223.230 at 2014-03-01 21:01:03 +0200
+Processing by OperationController#search as JSON
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search.json?car_number=b30abc&lat=44&long=22" for 141.85.223.230 at 2014-03-01 21:02:11 +0200
+Processing by OperationController#search as JSON
+  Parameters: {"car_number"=>"b30abc", "lat"=>"44", "long"=>"22"}
+  [1m[36mBlockingClient Load (0.3ms)[0m  [1mSELECT "blocking_clients".* FROM "blocking_clients" [0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blocking_clients/1/edit" for 127.0.0.1 at 2014-03-01 21:02:48 +0200
+Connecting to database specified by database.yml
+Processing by BlockingClientsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlockingClient Load (0.1ms)[0m  [1mSELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1[0m  [["blocking_client_id", "1"]]
+  Rendered blocking_clients/_form.html.erb (5.5ms)
+  Rendered blocking_clients/edit.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 90ms (Views: 45.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/blocking_clients.css?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /blocking_clients.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /messages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/operation.css?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /operation.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/blocking_clients.js?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /blocking_clients.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /messages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/operation.js?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /operation.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-01 21:02:49 +0200
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started PUT "/blocking_clients/1" for 127.0.0.1 at 2014-03-01 21:03:11 +0200
+Processing by BlockingClientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AvyyT1GMdvZ0DRadurWPLcetO42tAEsp+BH96z5RErw=", "blocking_client"=>{"blocking_client_id"=>"1", "car_number"=>"b30abc", "lat"=>"44", "long"=>"22"}, "commit"=>"Update Blocking client", "id"=>"1"}
+  [1m[35mBlockingClient Load (0.1ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1  [["blocking_client_id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "blocking_clients" SET "car_number" = 'b30abc', "lat" = 44.0, "long" = 22.0, "updated_at" = '2014-03-01 19:03:11.355423' WHERE "blocking_clients"."blocking_client_id" = 1
+  [1m[36m (225.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/blocking_clients/1
+Completed 302 Found in 256ms (ActiveRecord: 225.8ms)
+
+
+Started GET "/blocking_clients/1" for 127.0.0.1 at 2014-03-01 21:03:11 +0200
+Processing by BlockingClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBlockingClient Load (0.2ms)[0m  SELECT "blocking_clients".* FROM "blocking_clients" WHERE "blocking_clients"."blocking_client_id" = ? LIMIT 1  [["blocking_client_id", "1"]]
+  Rendered blocking_clients/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.css?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /messages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.css?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /operation.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.css?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /blocking_clients.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/blocking_clients.js?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /blocking_clients.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/messages.js?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /messages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/operation.js?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /operation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-01 21:03:12 +0200
+Served asset /application.js - 304 Not Modified (0ms)

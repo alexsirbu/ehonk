@@ -6,7 +6,7 @@ class OperationController < ApplicationController
 			message = "Invalid registration, try again!"
 		else
 			correct_params={}
-			correct_params[:car_number]=params[:car_number]
+			correct_params[:car_number]=params[:car_number].upcase
 			correct_params[:lat]=params[:lat]
 			correct_params[:long]=params[:long]
       @blocking_client = BlockingClient.new(correct_params)
@@ -77,14 +77,12 @@ class OperationController < ApplicationController
 	
 	def search
 	#car_number, lat, long
-		puts params.to_s
-	
 		if !params[:car_number] || !params[:lat] || !params[:long]
 			message = "Invalid search parameters, try again!"
 		else
 			@notified = false
 			BlockingClient.all.each do |car|
-				if car.car_number == params[:car_number] and distance([params[:lat].to_f, params[:long].to_f], [car.lat, car.long]) < 1000
+				if car.car_number == params[:car_number].upcase and distance([params[:lat].to_f, params[:long].to_f], [car.lat, car.long]) < 1000
 					correct_params={}
 					correct_params[:blocking_client_id]=car.blocking_client_id
 					correct_params[:message_text]="You are blocking someone!"
